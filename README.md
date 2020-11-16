@@ -2,18 +2,19 @@
 
 ##users テーブル
 
-| Colum           | Type    | Options     |
-| ----------------|---------|-------------|
-| nickname        | string  | null: false |
-| email           | string  | null: false |
-| password        | string  | null: false |
-| last name       | string  | null: false |
-| first name      | string  | null: false |
-| last name_kana  | string  | null: false |
-| first name_kana | string  | null: false |
-| year of birth   | string  | null: false |
-| birth month     | string  | null: false |
-| birth day       | string  | null: false |
+| Colum            | Type    | Options     |
+| -----------------|---------|-------------|
+| nickname         | string  | null: false |
+| email            | string  | null: false |
+| password         | string  | null: false |
+|encrypted_password| string  | null: false |
+| last name        | string  | null: false |
+| first name       | string  | null: false |
+| last name_kana   | string  | null: false |
+| first name_kana  | string  | null: false |
+| year of birth    | string  | null: false |
+| birth month      | string  | null: false |
+| birth day        | string  | null: false |
 
 
 
