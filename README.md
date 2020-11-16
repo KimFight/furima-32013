@@ -1,24 +1,64 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##users テーブル
 
-Things you may want to cover:
+| Colum           | Type    | Options     |
+| ----------------|---------|-------------|
+| nickname        | string  | null: false |
+| email           | string  | null: false |
+| password        | string  | null: false |
+| last name       | string  | null: false |
+| first name      | string  | null: false |
+| last name_kana  | string  | null: false |
+| first name_kana | string  | null: false |
+| year of birth   | string  | null: false |
+| birth month     | string  | null: false |
+| birth day       | string  | null: false |
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Association
 
-* Database creation
+- has_many :items
+- has_many :orders
 
-* Database initialization
+## items テーブル
 
-* How to run the test suite
+| Colum               | Type        | Options                         |
+| --------------------|---------    |---------------------------------|
+| image          (Active Storage)                                     |
+| name                | string      | null: false                     |
+| explanation         | string      | null: false                     |
+| category            | string      | null: false                     |
+| status              | string      | null: false                     |
+| delivery burden     | string      | null: false                     |
+| shipment source     | string      | null: false                     |
+| days                | string      | null: false                     |
+| price               | string      | null: false                     |
+| user_id             | references  | null: false , foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Association
 
-* ...
+- belongs_to :user
+- has_one    :order
+
+## orders テーブル
+
+| Colum             | Type        | Options                         |
+| ------------------|-------------|---------------------------------|
+| card information  | string      | null: false                     |
+| expiration date   | string      | null: false                     |
+| security code     | string      | null: false                     |
+| postal code       | string      | null: false                     |
+| prefectures       | string      | null: false                     |
+| municipality      | string      | null: false                     |
+| address           | string      | null: false                     |
+| building name     | string      | null: false                     |
+| phone number      | string      | null: false                     |
+| item_id           | references  | null: false , foreign_key: true |
+
+## Association
+
+- belongs_to :user
+- belongs_to :item
