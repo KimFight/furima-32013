@@ -26,8 +26,7 @@
 ## items テーブル
 
 | Colum               | Type        | Options                         |
-| --------------------|---------    |---------------------------------|
-| image          (Active Storage)                                     |
+| --------------------|-------------|---------------------------------|
 | name                | string      | null: false                     |
 | explanation         | string      | null: false                     |
 | category            | string      | null: false                     |
