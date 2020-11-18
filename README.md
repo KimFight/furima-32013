@@ -39,7 +39,7 @@
 ## Association
 
 - belongs_to :user
-- has_one    :order
+- has_one    :purchase
 
 ## orders テーブル
 
@@ -49,9 +49,23 @@
 | prefectures_id    | integer     | null: false                     |
 | municipality      | string      | null: false                     |
 | address           | string      | null: false                     |
-| building_name     | string      |                     |
+| building_name     | string      |                                 |
 | phone_number      | string      | null: false                     |
+
+
+## Association
+
+- belongs_to :user
+- belongs_to :purchase
+
+
+## purchasesテーブル
+
+| Colum             | Type        | Options                         |
+| ------------------|-------------|---------------------------------|
+| user              | references  | null: false , foreign_key: true |
 | item              | references  | null: false , foreign_key: true |
+
 
 ## Association
 
