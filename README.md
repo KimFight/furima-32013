@@ -13,8 +13,6 @@
 | last name_kana   | string  | null: false |
 | first name_kana  | string  | null: false |
 | birth_date       | date    | null: false |
-| birth month      | string  | null: false |
-| birth day        | string  | null: false |
 
 
 
