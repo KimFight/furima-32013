@@ -32,7 +32,7 @@
 | delivery burden_id  | integer     | null: false                     |
 | shipment source_id  | integer     | null: false                     |
 | days_id             | integer     | null: false                     |
-| price               | string      | null: false                     |
+| price               | integer     | null: false                     |
 | user_id             | references  | null: false , foreign_key: true |
 
 
