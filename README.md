@@ -49,7 +49,7 @@
 | expiration date   | string      | null: false                     |
 | security code     | string      | null: false                     |
 | postal code       | string      | null: false                     |
-| prefectures       | string      | null: false                     |
+| prefectures_id    | integer     | null: false                     |
 | municipality      | string      | null: false                     |
 | address           | string      | null: false                     |
 | building name     | string      | null: false                     |
