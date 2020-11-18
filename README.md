@@ -33,7 +33,7 @@
 | shipment source_id  | integer     | null: false                     |
 | days_id             | integer     | null: false                     |
 | price               | integer     | null: false                     |
-| user_id             | references  | null: false , foreign_key: true |
+| user                | references  | null: false , foreign_key: true |
 
 
 ## Association
@@ -54,7 +54,7 @@
 | address           | string      | null: false                     |
 | building name     | string      | null: false                     |
 | phone number      | string      | null: false                     |
-| item_id           | references  | null: false , foreign_key: true |
+| item              | references  | null: false , foreign_key: true |
 
 ## Association
 
