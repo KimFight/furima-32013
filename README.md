@@ -52,7 +52,7 @@
 | prefectures_id    | integer     | null: false                     |
 | municipality      | string      | null: false                     |
 | address           | string      | null: false                     |
-| building name     | string      | null: false                     |
+| building name     | string      |                     |
 | phone number      | string      | null: false                     |
 | item              | references  | null: false , foreign_key: true |
 
