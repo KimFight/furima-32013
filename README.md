@@ -45,9 +45,6 @@
 
 | Colum             | Type        | Options                         |
 | ------------------|-------------|---------------------------------|
-| card information  | string      | null: false                     |
-| expiration date   | string      | null: false                     |
-| security code     | string      | null: false                     |
 | postal code       | string      | null: false                     |
 | prefectures_id    | integer     | null: false                     |
 | municipality      | string      | null: false                     |
