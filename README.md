@@ -27,11 +27,11 @@
 | --------------------|-------------|---------------------------------|
 | name                | string      | null: false                     |
 | explanation         | text        | null: false                     |
-| category            | string      | null: false                     |
-| status              | string      | null: false                     |
-| delivery burden     | string      | null: false                     |
-| shipment source     | string      | null: false                     |
-| days                | string      | null: false                     |
+| category_id         | integer     | null: false                     |
+| status_id           | integer     | null: false                     |
+| delivery burden_id  | integer     | null: false                     |
+| shipment source_id  | integer     | null: false                     |
+| days_id             | integer     | null: false                     |
 | price               | string      | null: false                     |
 | user_id             | references  | null: false , foreign_key: true |
 
