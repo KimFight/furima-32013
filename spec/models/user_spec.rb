@@ -56,6 +56,13 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Password is invalid.")
       end
 
+      it "passwordは半角英数字混合でないと登録できないこと" do
+        @user.password = "aaaaaa"
+        @user.password_confirmation = "aaaaaa"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is invalid.")
+      end
+
       it "passwordとpassword_confirmationが不一致では登録できないこと" do
         @user.password = "111aaa"
         @user.password_confirmation = "111bbb"
