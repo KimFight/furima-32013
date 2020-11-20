@@ -4,6 +4,16 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.create
+  end
+
+
+
 private
 
   def item_paramas
