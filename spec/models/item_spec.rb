@@ -13,12 +13,6 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
 
-      it "priceは半角数字ならば登録できること" do
-        @item.price = "333"
-        @item.valid?
-        expect(@item).to be_valid
-      end
-
     end
     
     context '商品登録ができない時' do
