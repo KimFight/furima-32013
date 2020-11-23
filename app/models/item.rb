@@ -23,12 +23,12 @@ class Item < ApplicationRecord
       validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10000000}
   end
 
-def previous
-  item.category.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
-end
+#def previous
+#  item.category.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
+#end
 
-def next
-  item.category.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
-end
+#def next
+#  item.category.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
+#end
 
 end
