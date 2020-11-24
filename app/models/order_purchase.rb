@@ -1,6 +1,6 @@
 class OrderPurchase
   include ActiveModel::Model
-  attr_accessor  :postal_code, :prefectures_id, :municipality, :address, :building_name, :phone_number, :purchase, :user, :item
+  attr_accessor  :postal_code, :prefectures_id, :municipality, :address, :building_name, :phone_number, :purchase, :user_id, :item_id
 
   with_options presence: true do
 
@@ -9,18 +9,18 @@ class OrderPurchase
     validates :municipality
     validates :address  
     validates :phone_number,   format: { with: /\A\d{10,11}\z/, message: "is invalid."}
-  
+
   end
 
   #presenceテーブル
-    validates :user
-    validates :item  
+    validates :user_id, presence: true
+    validates :item_id, presence: true
 
-    def save
-      # orderの情報を保存、「order」という変数へ
-      Order.create(postal_code: postal_code, prefectures_id: prefectures_id, municipality: municipality, address: address, building_name: building_name, phone_number: phone_number, purchase: purchase)
-      # purchaseの情報を保存
-      purchase = Purchase.create(user_id: user.id, item_id: item.id)
+    def save 
+      
+      @purchase = Purchase.create(user_id: user_id, item_id: item_id)
+      Order.create(postal_code: postal_code, prefectures_id: prefectures_id, municipality: municipality, address: address, building_name: building_name, phone_number: phone_number, purchase_id: @purchase.id)
+     
     
     end
 end
