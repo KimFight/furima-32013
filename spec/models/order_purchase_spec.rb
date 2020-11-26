@@ -10,7 +10,7 @@
 
     context '購入できる時' do
 
-        it 'すべての値が正しく入力されていれば保存できること' do
+        it 'すべての値(token追加)が正しく入力されていれば保存できること' do
           expect(@order_purchase).to be_valid
         end
 
@@ -88,6 +88,12 @@
         expect(@order_purchase.errors.full_messages).to include("Item can't be blank")
       end
     
+      it "tokenが空では登録できないこと" do
+        @order_purchase.token = nil
+        @order_purchase.valid?
+        expect(@order_purchase.errors.full_messages).to include("Token can't be blank")
+      end
+
     end
   end
 end

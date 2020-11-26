@@ -126,14 +126,25 @@
     <%= link_to '新規投稿商品', new_item_path, class: "subtitle" %>
     <ul class='item-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @items.each do |item| %>
+
         <li class='list'>
         <div class='item-img-content'>
+         
+          <% if item.purchase != nil %>
+            <div class='sold-out'>
+             <span>Sold Out!!</span>
+            </div>
+          <% end %>
+         
           <%= link_to image_tag(item.image, class: "item-img"), item_path(item.id) %>
-          <h3 class='item-name'>
-            <%= item.name %>
-          </h3>
+          
+        </div> 
+        
+        <div class='item-info'>
+           <h3 class='item-name'>
+           <%= item.name %>
+           </h3>
 
           <div class='item-price'>
             <span><%= item.price %>円<br><%= item.delivery_burden.name %></span>
@@ -142,8 +153,8 @@
               <span class='star-count'>0</span>
             </div>
           </div>
-        </div>  
-      </li>
+         </div>
+        </li>
       <% end %>
 
     <% unless @items.any? %>
@@ -155,8 +166,8 @@
                 <div class='item-price'>
                   <span>99999999円<br>(税込み)</span>
                   <div class='star-btn'>
-                    <%= image_tag "star.png", class:"star-icon" %>
-                    <span class='star-count'>0</span>
+                  　<%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
                   </div>
                 </div>
             </div>
@@ -164,16 +175,8 @@
         <% end %>
       <% end %>
 
-         <!--  商品購入機能実装後にやります！
-          <%# 商品が売れていればsold outを表示しましょう %>
-          <div class='sold-out'>
-          <span>Sold Out!!</span>
-          </div>
-          <%# //商品が売れていればsold outを表示しましょう %>
-          </div>
-          -->
-
-    </ul>
+   </div>  
+   </ul>
   </div>
   <%# /商品一覧 %>
 </div>
