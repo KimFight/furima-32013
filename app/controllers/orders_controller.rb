@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     @order_purchase = OrderPurchase.new
     @item = Item.find(params[:item_id])  
       
-      if current_user.id == @item.user_id
+      if current_user.id == @item.user_id || @item.purchase != nil
          return redirect_to root_path
       end
   end
